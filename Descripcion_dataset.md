@@ -39,6 +39,10 @@ El conjunto de datos, conocido como "The Berka Dataset", es una colección de in
 - **DEMOGRAPHIC DATA (DISTRICT)**: Cada registro describe características demográficas de un distrito.
   - Tamaño: 77 objetos en el archivo.
 
+![Esquema de la Base de Datos](DDL.png)
+
+Para referencias (idiomáticas), revise el glosario [Data Dictionary](Data%20dictionary.pdf)
+
 ## Hipótesis Planteadas
 1. Existe una relación entre el historial de transacciones y el incumplimiento de préstamos.
 2. Los clientes con un mayor número de préstamos tienen una mayor probabilidad de incumplir.
