@@ -1,0 +1,19 @@
+# Este es el docker file con el cual popularmeos la base de datos
+
+# Usar una imagen oficial de Python como base
+FROM python:3.9-slim
+
+# Establecer el directorio de trabajo
+WORKDIR /usr/src/app
+
+# Copiar el script de Python al contenedor
+COPY populate_tables.py .
+
+# Instalar las dependencias necesarias
+RUN pip install pandas sqlalchemy requests psycopg2-binary
+
+# Comando por defecto para ejecutar el script
+CMD ["python", "populate_tables.py"]
+
+# Agregamos el comando para unirse a la red al iniciar el contenedor
+# CMD ["sh", "-c", "python populate_tables.py && docker network connect loan_default_my_network $(docker-compose ps -q db)"]
