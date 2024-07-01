@@ -1,0 +1,16 @@
+# Este es el docker file con el cual vamos a hacer queries en la DB
+
+# Usar una imagen oficial de Python como base
+FROM python:3.9-slim
+
+# Establecer el directorio de trabajo
+WORKDIR /usr/src/app
+
+# Copiar el script de Python al contenedor
+COPY reporting.py .
+
+# Instalar las dependencias necesarias
+RUN pip install pandas sqlalchemy psycopg2-binary
+
+# Comando por defecto para ejecutar el script
+CMD ["python", "reporting.py"]
